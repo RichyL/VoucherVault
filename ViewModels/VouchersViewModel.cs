@@ -26,19 +26,8 @@ namespace VoucherVault.ViewModels
         void GotoVoucher(VoucherSummary voucher)
         {
 
-            Shell.Current.GoToAsync($"{nameof(VoucherView)}?VoucherSummary=", new Dictionary<string, object>() { ["richy"] = voucher });
+            Shell.Current.GoToAsync($"{nameof(VoucherView)}", new Dictionary<string, object>() { ["VoucherSummary"] = voucher });
         }
 
-        [RelayCommand]
-        void HandleItemSelected(VoucherSummary obj)
-        {
-            System.Diagnostics.Debug.WriteLine($"************************ {obj.ShopName}");
-        }
-
-        [RelayCommand]
-        void SayHello()
-        {
-            System.Diagnostics.Debug.WriteLine("Hello1");
-        }
     }
 }

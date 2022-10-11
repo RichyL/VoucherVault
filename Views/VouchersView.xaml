@@ -7,9 +7,6 @@
              
              Title="VouchersView">
     <VerticalStackLayout>
-
-        <Button Text="Test" Command="{Binding SayHelloCommand}" />
-
         <ScrollView>
             <ListView ItemsSource="{Binding VoucherList}">
                 <ListView.ItemTemplate>
