@@ -1,4 +1,7 @@
-﻿namespace VoucherVault;
+﻿using VoucherVault.ViewModels;
+using VoucherVault.Views;
+
+namespace VoucherVault;
 
 public static class MauiProgram
 {
@@ -13,6 +16,13 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        builder.Services.AddSingleton<VouchersViewModel>();
+        builder.Services.AddSingleton<VouchersView>();
+
+        builder.Services.AddTransient<VoucherViewModel>();
+        builder.Services.AddTransient<VoucherView>();
+
+
+        return builder.Build();
 	}
 }
