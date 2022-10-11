@@ -8,14 +8,14 @@
              Title="VouchersView">
     <VerticalStackLayout>
         <ScrollView>
-            <ListView ItemsSource="{Binding VoucherList}">
+            <ListView ItemsSource="{Binding VoucherList}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <HorizontalStackLayout>
-                                <Button Text="{Binding ShopName,FallbackValue='No value'}"  Command="{Binding Source={RelativeSource Mode=FindAncestor,AncestorType={x:Type views:VouchersView}}, Path=BindingContext.GotoVoucherCommand}" CommandParameter="{Binding .}" />
-                                <!--CommandParameter="{Binding .}"-->
-                                <Label Text="{Binding VoucherValue,FallbackValue='No value'}" />
+                            <HorizontalStackLayout Spacing="50">
+                                <Label Text="{Binding ShopName  ,FallbackValue='No value'}" Padding="0,0,10,0" VerticalOptions="Center"/>
+                                <Label Text="{Binding VoucherValue,FallbackValue='No value'}" Padding="0,0,10,0" VerticalOptions="Center"/>
+                                <Button Text="Edit" Command="{Binding Source={RelativeSource Mode=FindAncestor,AncestorType={x:Type views:VouchersView}}, Path=BindingContext.GotoVoucherCommand}" CommandParameter="{Binding .}" HorizontalOptions="End"/>
                             </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
